@@ -275,7 +275,7 @@ const Game = () => {
               expandSnake={(amount) => expandSnake(amount)}
             />
             {gameOver && (
-              <GameOverContainer onClick={() => window.location.assign("/")}>
+              <GameOverContainer onClick={() =>window.location.href="https://amansdfg.github.io/SnakeGame/"}>
                 Game Over!
               </GameOverContainer>
             )}
