@@ -52,7 +52,7 @@ body {
 }
 
 .hideBoard > *:not(:last-child) {
-  /* Your styles for these elements */
+
   opacity: 0.3;
 }
 

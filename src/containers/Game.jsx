@@ -167,7 +167,7 @@ const Game = () => {
     drawGame();
     setScore(updatedScore());
   };
-
+  
   const updateGame = () => {
     snakeComponentRef.current.updateSnake();
     foodComponentRef.current.updateFood();
@@ -205,7 +205,7 @@ const Game = () => {
   const updatedScore = () => {
     return snakeComponentRef.current.getTheScore();
   };
-
+  
   const getNameFromSpeed = {
     5: "SLUG",
     7: "WARM",
@@ -215,7 +215,7 @@ const Game = () => {
   const gameOverAudioPlay = async () => {
     const audioContext = new (window.AudioContext ||
       window.webkitAudioContext)();
-    const audioElement = new Audio(GameOverAudio); // Path to your sound file
+    const audioElement = new Audio(GameOverAudio);
     const source = audioContext.createMediaElementSource(audioElement);
     source.connect(audioContext.destination);
     await audioElement.play();
@@ -284,7 +284,7 @@ const Game = () => {
             <ScoreAndHighScoreContainer id={"scoreContainer"}>
               <DisplayScore className="score">{score}</DisplayScore>
               <DisplayScore className="score">
-                {getNameFromSpeed[snakeSpeed]} {highScore}
+                Record for {getNameFromSpeed[snakeSpeed]} {highScore}
               </DisplayScore>
             </ScoreAndHighScoreContainer>
           )}

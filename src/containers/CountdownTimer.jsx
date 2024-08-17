@@ -28,7 +28,7 @@ const CountdownTimer = () => {
   const oddAudioPlay = async () => {
     const audioContext = new (window.AudioContext ||
       window.webkitAudioContext)();
-    const audioElement = new Audio(HighAudio); // Path to your sound file
+    const audioElement = new Audio(HighAudio);
     const source = audioContext.createMediaElementSource(audioElement);
     source.connect(audioContext.destination);
     await audioElement.play();
@@ -37,7 +37,7 @@ const CountdownTimer = () => {
   const evenAudioPlay = async () => {
     const audioContext = new (window.AudioContext ||
       window.webkitAudioContext)();
-    const audioElement = new Audio(LowAudio); // Path to your sound file
+    const audioElement = new Audio(LowAudio);
     const source = audioContext.createMediaElementSource(audioElement);
     source.connect(audioContext.destination);
     await audioElement.play();
@@ -48,9 +48,7 @@ const CountdownTimer = () => {
     const interval = setInterval(() => {
       if (timer >= 1) {
         setTimer(timer - 1);
-        if (timer === 0) {
-          evenAudioPlay();
-        } else if (timer % 2 === 0) {
+        if (timer % 2 === 0) {
           evenAudioPlay();
         } else {
           oddAudioPlay();
@@ -58,7 +56,7 @@ const CountdownTimer = () => {
       } else {
         clearInterval(interval);
       }
-    }, 750);
+    }, 800);
 
     return () => {
       clearInterval(interval);
