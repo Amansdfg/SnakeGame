@@ -25,11 +25,9 @@ const Food = forwardRef((props, ref) => {
   const drawFood = () => {
     const entireSnake = document.getElementById("gameContainer");
     const foodElement = document.createElement("div");
-    // foodElement.src = "https://playsnake.org/assets/images/food.svg";
     foodElement.style.gridRowStart = foodPosition.y;
     foodElement.style.gridColumnStart = foodPosition.x;
     foodElement.classList.add("foodElement");
-    // foodElement.classList.add("animateFood");
     entireSnake.appendChild(foodElement);
   };
 
