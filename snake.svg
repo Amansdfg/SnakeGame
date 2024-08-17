@@ -1,0 +1,74 @@
+<!-- <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="50" cy="50" r="45" fill="green" stroke="black" stroke-width="5"/>
+  <path d="M30 40 Q50 20, 70 40 T70 60 Q50 80, 30 60 Z" fill="darkgreen" stroke="black" stroke-width="3"/>
+  <circle cx="40" cy="50" r="5" fill="white"/>
+  <circle cx="60" cy="50" r="5" fill="white"/>
+  <circle cx="42" cy="50" r="2" fill="black"/>
+  <circle cx="58" cy="50" r="2" fill="black"/>
+  <path d="M45 60 Q50 70, 55 60" stroke="black" stroke-width="3" fill="none"/>
+</svg> -->
+
+<!-- <svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+
+  <path d="M100 20 C70 20, 40 60, 50 100 C40 140, 70 180, 100 180 C130 180, 160 140, 150 100 C160 60, 130 20, 100 20 Z" fill="#4CAF50" stroke="#2E7D32" stroke-width="5"/>
+
+
+  <circle cx="75" cy="80" r="10" fill="#fff"/>
+  <circle cx="125" cy="80" r="10" fill="#fff"/>
+  <circle cx="77" cy="82" r="5" fill="#000"/>
+  <circle cx="127" cy="82" r="5" fill="#000"/>
+
+
+  <circle cx="100" cy="115" r="3" fill="#000"/>
+
+
+  <path d="M80 140 L90 160 L85 140 Z" fill="#fff"/>
+  <path d="M120 140 L110 160 L115 140 Z" fill="#fff"/>
+
+
+  <path d="M75 100 Q100 120, 125 100" stroke="#388E3C" stroke-width="3" fill="none"/>
+  <path d="M70 110 Q100 130, 130 110" stroke="#388E3C" stroke-width="3" fill="none"/>
+
+  <path d="M100 160 Q95 180, 100 180 Q105 180, 100 160 Z" fill="#FF5252" stroke="#D32F2F" stroke-width="3"/>
+
+  <path d="M60 120 Q100 150, 140 120" stroke="#2E7D32" stroke-width="3" fill="none"/>
+</svg> -->
+
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- Define gradients -->
+  <defs>
+    <radialGradient id="snakeSkin" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0%" stop-color="#6B8E23"/>
+      <stop offset="100%" stop-color="#556B2F"/>
+    </radialGradient>
+    <linearGradient id="eyeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF0000"/>
+      <stop offset="100%" stop-color="#8B0000"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Snake head shape -->
+  <path d="M50,100 C50,50 150,50 150,100 C150,150 50,150 50,100 Z" fill="url(#snakeSkin)" stroke="#2F4F4F" stroke-width="5"/>
+
+  <!-- Eyes -->
+  <ellipse cx="75" cy="85" rx="10" ry="15" fill="url(#eyeGradient)"/>
+  <ellipse cx="125" cy="85" rx="10" ry="15" fill="url(#eyeGradient)"/>
+
+  <!-- Eye pupils -->
+  <circle cx="75" cy="85" r="5" fill="#000"/>
+  <circle cx="125" cy="85" r="5" fill="#000"/>
+
+  <!-- Nostrils -->
+  <ellipse cx="90" cy="110" rx="3" ry="5" fill="#000"/>
+  <ellipse cx="110" cy="110" rx="3" ry="5" fill="#000"/>
+
+  <!-- Mouth -->
+  <path d="M70,130 Q100,150 130,130" stroke="#000" stroke-width="4" fill="none"/>
+
+  <!-- Tongue -->
+  <path d="M100,150 L100,170 L95,175 M100,170 L105,175" stroke="#FF0000" stroke-width="2" fill="none"/>
+
+  <!-- Scales -->
+  <path d="M60,100 L70,110 M80,100 L90,110 M100,100 L110,110 M120,100 L130,110 M140,100 L150,110" stroke="#556B2F" stroke-width="2"/>
+  <path d="M65,115 L75,125 M85,115 L95,125 M105,115 L115,125 M125,115 L135,125" stroke="#556B2F" stroke-width="2"/>
+</svg>
