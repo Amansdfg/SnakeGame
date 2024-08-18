@@ -19,6 +19,10 @@
   border-radius: 30%;
   background-color: rgba(33, 82, 114, 0.75);
 }
+img{
+  width: 50px;
+  aspect-ratio: 1/1;
+}
 
 /* .animateFood {
   animation: spin 3.5s infinite;
@@ -68,7 +72,9 @@ body {
     transform: scale(0.5);
     margin-top: -150px;
   }
-
+  #gameAction{
+    transform: scale(0.5);
+  }
   .score {
     font-size: 32px !important;
   }

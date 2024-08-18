@@ -8,7 +8,11 @@ import Food from "./Food";
 import Snake from "./Snake";
 import GameOverAudio from "../assets/die.mp3";
 import Header from "./Header";
-
+import up from "../assets/up.svg"
+import down from "../assets/down.svg"
+import left from "../assets/left.svg"
+import right from "../assets/right.svg"
+import {handleArrowClick} from "../helperFunctions"
 const OuterContainer = styled.div`
   width: 100%;
   height: 100vh;
@@ -105,6 +109,28 @@ const SnakeHeadingContainer = styled.div`
   width: 100%;
 `;
 
+const SnakeRecord = styled.span`
+  font-size: 20px;
+  font-weight: 400;
+`;
+const GameAction=styled.div`
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  gap:40px;
+`
+
+const ActionUp=styled.div`  
+  display:flex;
+  flex-direction:column;
+  text-align:center;
+`
+const ActionDown=styled.div`
+  display:flex;
+  justify-content:space-between;
+  gap:40px;
+`
 const Game = () => {
   const [gameOver, setGameOver] = useState(false);
   const [score, setScore] = useState(0);
@@ -152,7 +178,24 @@ const Game = () => {
     }
   }, [gameStarted]);
 
+  // const startGame = (currentTime) => {
+  //   gameIsOver = checkIfGameIsOver();
+  //   if (gameIsOver) {
+  //     setGameOver(true);
+  //     gameOverAudioPlay();
+  //     return;
+  //   }
+  //   window.requestAnimationFrame(startGame);
+  //   const secondSinceLastRendered = (currentTime - lastRenderedTime) / 1000;
+  //   if (secondSinceLastRendered < 1 / snakeSpeed) return;
+  //   lastRenderedTime = currentTime;
+  //   updateGame();
+  //   drawGame();
+  //   setScore(updatedScore());
+  // };
   const startGame = (currentTime) => {
+    if (!snakeComponentRef.current) return; // Add this check
+  
     gameIsOver = checkIfGameIsOver();
     if (gameIsOver) {
       setGameOver(true);
@@ -189,7 +232,7 @@ const Game = () => {
   };
 
   const getSnakeHeadPosition = () => {
-    return snakeComponentRef.current.getSnakeHeadAxis();
+    return snakeComponentRef.current.getSnakeHeadAxis();  
   };
 
   const checkIfGameIsOver = () => {
@@ -220,6 +263,7 @@ const Game = () => {
     source.connect(audioContext.destination);
     await audioElement.play();
   };
+  
 
   return (
     <OuterContainer>
@@ -238,7 +282,9 @@ const Game = () => {
                 setGameStarted(true);
               }}
             >
+              
               SLUG
+             
             </StartButton>
             <StartButton
               onClick={() => {
@@ -246,6 +292,7 @@ const Game = () => {
                 setGameStarted(true);
               }}
             >
+             
               WARM
             </StartButton>
             <StartButton
@@ -253,16 +300,21 @@ const Game = () => {
                 setSnakeSpeed(9);
                 setGameStarted(true);
               }}
-            >
+            >            
               PYTHON
             </StartButton>
+          </LevelContainer>
+          <LevelContainer>
+          <SnakeRecord>record : {window.localStorage.getItem("SLUG")}</SnakeRecord>
+          <SnakeRecord>record :{window.localStorage.getItem("WARM")}</SnakeRecord>
+          <SnakeRecord>record :{window.localStorage.getItem("PYTHON")}</SnakeRecord>
           </LevelContainer>
         </StartContainer>
       )}
       {gameStarted && timerFunction ? (
         <CountdownTimer />
       ) : (
-        <div>
+        <div>      
           <SnackGameContainer
             id="gameContainer"
             style={{ display: gameStarted ? "" : "none" }}
@@ -280,14 +332,22 @@ const Game = () => {
               </GameOverContainer>
             )}
           </SnackGameContainer>
+        
           {gameStarted && (
-            <ScoreAndHighScoreContainer id={"scoreContainer"}>
+            <>
+             <ScoreAndHighScoreContainer id={"scoreContainer"}>
               <DisplayScore className="score">{score}</DisplayScore>
               <DisplayScore className="score">
                 Record for {getNameFromSpeed[snakeSpeed]} {highScore}
               </DisplayScore>
             </ScoreAndHighScoreContainer>
-          )}
+            <GameAction id="gameAction">
+              <ActionUp><img src={up} onClick={()=>handleArrowClick("up")}/></ActionUp>
+              <ActionDown><img src={left} onClick={()=>handleArrowClick("left")} /><img src={down} onClick={()=>handleArrowClick("down")} /><img src={right} onClick={()=>handleArrowClick("right")}/></ActionDown>
+            </GameAction>
+            </>
+           
+          )}        
         </div>
       )}
     </OuterContainer>

@@ -14,8 +14,8 @@ const HeaderContainer = styled.div`
 `;
 
 const MyLogo = styled.img`
-  width: 44px;
-  height: 44px;
+  width: 100px;
+  height: 100px;
   padding: 4px;
   border-radius: 12px;
   border: 2px solid black;
