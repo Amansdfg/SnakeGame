@@ -24,31 +24,6 @@ img{
   aspect-ratio: 1/1;
 }
 
-/* .animateFood {
-  animation: spin 3.5s infinite;
-}
-
-@keyframes appear {
-  0% {
-    transform: scale(0.1);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
-@keyframes spin {
-  0% {
-    transform: rotate(0);
-  }
-  50% {
-    transform: rotate(350deg);
-  }
-  100% {
-    transform: rotate(0deg);
-  }
-} */
-
 body {
   overflow: hidden;
   background-color: #9bba5a;
@@ -56,7 +31,6 @@ body {
 }
 
 .hideBoard > *:not(:last-child) {
-
   opacity: 0.3;
 }
 
@@ -64,7 +38,9 @@ body {
   #gameContainer {
     transform: scale(0.5);
   }
-
+  #header{
+    transform: scale(0.5);
+  }
   #startContainer {
     transform: scale(0.5);
   }
@@ -79,16 +55,14 @@ body {
     font-size: 32px !important;
   }
 }
-
 .animateFood {
-  animation: rotateFood 2s linear infinite;
+  animation: rotateFood 3s linear infinite;
 }
 
 @keyframes rotateFood {
   0% {
     transform: rotate(0);
   }
-
   100% {
     transform: rotate(360deg);
   }

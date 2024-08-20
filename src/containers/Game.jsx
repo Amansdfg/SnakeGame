@@ -14,19 +14,21 @@ import left from "../assets/left.svg"
 import right from "../assets/right.svg"
 import {handleArrowClick} from "../helperFunctions"
 const OuterContainer = styled.div`
-  width: 100%;
-  height: 100vh;
+  width: 100vw;
+  height: 100dvh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  user-select: none;
+  user-select: none; 
 `;
 
 const SnackGameContainer = styled.div`
   position: relative;
   display: grid;
   place-items: center;
+  width:630px;
+  height:630px;
   grid-template-columns: repeat(21, 1fr);
   grid-template-rows: repeat(21, 1fr);
   background-color: #ac6;
@@ -68,7 +70,7 @@ const StartContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
-  width: 600px;
+  width: 630px;
   padding: 100px 49px;
   border-radius: 3%;
   outline: 3px solid black;
@@ -177,25 +179,8 @@ const Game = () => {
       }, 3200);
     }
   }, [gameStarted]);
-
-  // const startGame = (currentTime) => {
-  //   gameIsOver = checkIfGameIsOver();
-  //   if (gameIsOver) {
-  //     setGameOver(true);
-  //     gameOverAudioPlay();
-  //     return;
-  //   }
-  //   window.requestAnimationFrame(startGame);
-  //   const secondSinceLastRendered = (currentTime - lastRenderedTime) / 1000;
-  //   if (secondSinceLastRendered < 1 / snakeSpeed) return;
-  //   lastRenderedTime = currentTime;
-  //   updateGame();
-  //   drawGame();
-  //   setScore(updatedScore());
-  // };
   const startGame = (currentTime) => {
-    if (!snakeComponentRef.current) return; // Add this check
-  
+    if (!snakeComponentRef.current) return;
     gameIsOver = checkIfGameIsOver();
     if (gameIsOver) {
       setGameOver(true);

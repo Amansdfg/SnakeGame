@@ -23,7 +23,7 @@ const MyLogo = styled.img`
 
 const Header = () => {
   return (
-    <HeaderContainer>
+    <HeaderContainer id="header">
       <MyLogo src={Logo} width="44px" height={"44px"} />
     </HeaderContainer>
   );

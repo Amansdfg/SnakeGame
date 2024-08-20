@@ -5,8 +5,8 @@ import { getTheDirectionOfTheInput } from "../helperFunctions";
 
 const Snake = forwardRef((props, ref) => {
   const [snakePosition, setSnakePosition] = useState([
-    { x: 10, y: 2 },
-    { x: 11, y: 2 },
+    { x: 1, y: 2 },
+    { x: 2, y: 2 },
   ]);
   const [newSegment, setNewSegment] = useState(0);
 
